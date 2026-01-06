@@ -15,8 +15,6 @@ This project follows **Clean Architecture** with clear separation of concerns:
 
 - User Management
 - File Management
-- Project Management
-- Notification System
 
 ## ✨ Features
 
@@ -142,7 +140,6 @@ pytest tests/integration/
 
 ## 📚 Documentation
 
-- [Architecture Guide](docs/architecture/README.md)
 - [API Documentation](docs/api/README.md)
 - [Development Guide](docs/development/README.md)
 
@@ -177,11 +174,6 @@ mypy src
 # Run all checks manually
 sh .husky/pre-commit
 ```
-
-### Creating a New Module
-
-See [Development Guide](docs/development/creating-modules.md) for detailed instructions.
-
 ### Database Migrations
 
 Smart migration script with auto-detection of model changes.
