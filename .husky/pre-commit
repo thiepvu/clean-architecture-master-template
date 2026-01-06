@@ -1,0 +1,34 @@
+#!/bin/sh
+
+echo "Running pre-commit hooks..."
+
+# Activate virtual environment if exists
+if [ -d ".venv" ]; then
+    . .venv/bin/activate
+fi
+
+# Run isort
+echo "Running isort..."
+isort --check-only --diff src/ tests/
+if [ $? -ne 0 ]; then
+    echo "isort check failed. Run 'isort src/ tests/' to fix."
+    exit 1
+fi
+
+# Run black
+echo "Running black..."
+black --check src/ tests/
+if [ $? -ne 0 ]; then
+    echo "black check failed. Run 'black src/ tests/' to fix."
+    exit 1
+fi
+
+# Run mypy
+echo "Running mypy..."
+mypy src/
+if [ $? -ne 0 ]; then
+    echo "mypy check failed. Please fix type errors."
+    exit 1
+fi
+
+echo "All pre-commit checks passed!"

@@ -1,0 +1,12 @@
+{
+  "name": "clean-architecture",
+  "version": "1.0.0",
+  "description": "A Clean Architecture application",
+  "private": true,
+  "scripts": {
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.0.0"
+  }
+}
